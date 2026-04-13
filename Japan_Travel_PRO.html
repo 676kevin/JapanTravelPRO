@@ -1,0 +1,821 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Japan Travel PRO">
+<meta name="application-name" content="Japan Travel PRO">
+<meta name="theme-color" content="#e83b4c">
+<title>Japan Travel PRO</title>
+<link rel="apple-touch-icon" href="data:image/png;base64,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">
+<link rel="apple-touch-icon" sizes="152x152" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJgAAACYCAIAAACXoLd2AAAGLklEQVR4nO2d32scVRTHZ2ZnN9nddJOoGEJbjW1iEptg9EHQllKUgqHWpkiffOmL4INUiygiKlZfFNonwX9C0IZg0wdBlCjkoVJLG6k/sLaJMUJqEnA3yf7yYWDd/NjJzM79ce6Z7+f13k3OPZ89d+7cubtr/3XwOQuYj6M7ACAGiGQCRDIBIpkAkUyASCZAJBMgkgkQyQSIZAJEMgEimQCRTIBIJkAkEyCSCRDJBIhkgqs7AMF0TU0E77xw6Li8SBRjm35mJ5Q5f4z2aqRIgfIaYZxUk0Qq8LcVU4waIFKLv60QN0paJBGF9ZDVSVQkQYX1ENRJTiRxhfWQ0klrQ8AgixaxaKlUJKmkhIVCaZKoSKMtWjTi11yRFFIgEI2lqbMimVm0tI5Im0h+Fj10jUuPSK4WPbSMTvU1krfCTai8ZCqtyFhZtNSOV53IuFn0UDZqRSLjadFDzdhJbAiA6KgQGedy9FCQAekiYdFDdh7kioTFeqRmQ6JIWNyKvJxgscMEWSJRjo2QlBkpImHRHxn5wdTKBPEiUY5BEJ4lwSJhMThic4WplQkiRaIcwyIwY6hIJggTiXJsDlF5Q0UyQYxIlGMUhGQPFckEiGSCgOOQkubVwsXJlfOfbt/mOF3fjjfzwm1xXSebsduyTkfO7duXHOhLjQwl9nSHjDcqEc9Ocvt6lmYolSrLK9bySnluvnjjZsGatCwrNTKUPvFs6zOHLcfWHV8gMLVuz/rV68vnzt995a3y7J+6YwlEVJG816vFazOLp8+sX72u4H9FzCQqcgeqq2tLb35Q/OkX3YHsAETuTDVfWPnwglUu6w7ED4gMROn2XP7zS7qj8CPSqtW8C+TW+5ZSqbK0Upy5mR+/vD79g89LC+OTmVNyP13VNTXR9E1I7CvSdZ377mk5/GTnhXO7Xn3Jp2Pp1p3y/IKyuMISe5F1ZE4933LkKZ8OxR9vKAsmLBC5gfSxoz6t5cW7yiIJC0RuwH1wj09r5Z9lZZGEpXmR5q10glCt+jZL365rOquoyA2U/pj1aXU625VFEhaI3EDhy698WhP3diqLJCwQ+T/5zybWvvnep0Py0SFlwYQl9o+xyuXK0nJx5uf8xcvr01d8Oro9exPd9yuLKywxE1mpNL11kj4xKjYWsWBqDYT7wO7MSYg0HDvdmnvnrOWSnr0gcgfsVKrjo3eTj/TrDmQHSL/LtJM80J97+zX/7R4iQOT2JIcHM2OjrUePmHL4CiItK5Fw2jJ2Nut05NzefcmB3tRjQ4m9u3WHFY6YifQ9EGs0WOwwASKZ0LxICj92wQ+c2Yk7EMkEiGQCRDIhkki56x2f4zMOz/dflHzSzUgln2/U5LRlVUZiBHRFluf/btTktO9SGYkR0BW5fuVaoya7PacyEiOIute6cOi4jAOua1PT5TtzjVqTA30+r02PjabHSD/N35aICw6KFVn67dbKx5/4dEg9PqwsGFMg8/SjWq3+my/dnl39+rvCF5eqq2uNOtotqdQI3WOJuhAgMvrsunj6TOnX3wN2Tp88ZrNbtUa/kaM4tfpgp1uzL76gOwqKGCXSsdvff4PyBzA0IkakikdajpM7+3LLwSek/yPlCMkemcWOL4nurvb3Xk8OD+oOhC7CREq6oXT396THRtOjT9utrcL/OAVETWaUKrL25X65Nnd/T3Lw4eSBfrf3Id1hmYHgH8vm+TFmaQhcWxi1agWNESwSJ7KCIzZX4isSLoMgPEuYWpkgRSSK0h8Z+ZFVkXDZCEmZwdTKBIkiUZRbkZcTuRUJl/VIzYb0qRUuPWTnQcU1Ei4VZACLHSYoEhnnolQzdnUVGU+XykatdGqNm0uV4xX8PDIg7B9bqn/L6lns8C5NLaPTtmrl6lLXuHTefvBzqXFEeq6Rm2BwydT+piSxIaA9CxGhED+JiqxhXGlSUOhBoiJr0MlLEEhFS6siaxAvTVIKPYiK9CCok6BCD9IiPYjoJKvQwwCRNbQYJe6vhkkiaygwaoq/GkaKrEegVOPk1WO8yE2E8mq0uU1wExlbaG0IgKaBSCZAJBMgkgkQyQSIZAJEMgEimQCRTIBIJkAkEyCSCRDJBIhkAkQyASKZAJFM+A9G5bCX0ghY/AAAAABJRU5ErkJggg==">
+<link rel="apple-touch-icon" sizes="120x120" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHgAAAB4CAIAAAC2BqGFAAAE1ElEQVR4nO2dPWwURxTHZ8d732ubcBgoLBnF2LIgCEKQHImjMCCBopAqHVAgAR0guoQoRRKKFIBEiaIQCQlSQAVNXAQKQOI7kRAFRRJACIGwDQcGn83dOsUScvauzO3uzH9mZ9+vnF3dvffz85vd2dWN9Xjt54yQD1cdQFog0SBINAgSDYJEgyDRIEg0CBINgkSDINEgSDQIEg2CRIMg0SBs1QG8n0WXzrVy2pPKFtmRxMHScD26RbNzo5t3jUQL8etHE+PqRUvy60etcZWiYYqbUaVbjWglipvB60aLVq64GaRu6HW0VpYZNh5QReumeBaA0kZUtOaWGSRC6aL1t+whO06JrSMpimchqY3IquiEWmbSIpciOrmWPWTEL1500i17CM9CsGgzLHuIzYUW/kGIFG1SOXsIzEiYaPMse4jKS4xoUy17CMmOejQIAaLNLmeP+DnGFZ0Gyx4xM6XWASKW6PSUs0ecfKmiQUQXnbZy9oicNVU0iIii01nOHtFyV/OSY+3C5eq3P/rHy78ctfs+bPHk2dg2LxWtdsfu6c4M9GUHV2eW9QuJVggJeJu0Vep1t/qCVV80Hj6avHyN/XzS7l3i7NqWqwyqjoyxaK0jKX2j/te9518drP5whDUaYj85ggHzJ8Pa8IXq94fZ9LTaMMwXzRir/X5x4rfzamMI3aP16RszZk7XbYyMTV25MX78V3dkzH/y+LEThU1DjItcfw/1YoIpFc1528IFhS82l386wud/4D/ujoy9uXMXH9c7TBH9H7yrXNr+ZeChqVu3wcE0Y5poxlh2zarAcXdkFBvIDAwUzTucwHH35Tg4kmbCidZnJpwDt/oycJy3B/8BIhPKhoEVPXX9z8BxvqCMDWTmtyv8bhm4T0dfnTwTeCi7egU4mGZMWet4ex19c/z4KXfsuf847ypnlg/Aw/qfBIse3bGv9ZOd3dsZt+QF815Max2B5NdXCpvXq40hwRXdIvlNQ51f72WWynJmZou2e5c4O7fl1mmxHm2QaNvmpYLlOHZPtz2wNPfpGnrCIobA517akorJUAdINAgSDSKcaE1+zUUTUvmERXtINAjNRKu+f5OHGtHTE7XAcatUBEcCI7RoIfNh4+GjwHHe2RH/wzGE9aDmznDy0lX/IJ8/zyoW/OP5obX5JDxCmxsFreP16bP1v+/7x7OfrMQHAyNKRT+pbInwlHa6Nln/58HEueGJs8OBJ+Q3rIsQjBIi9E9E65j64/azPQfmPiezrF+T92slocXlHe9s7/hmv+oo5BJRtMB78bZFXfMOfWf3dIv6QNlEy13lerTllAqfbXR2bg282DCM6KJDT4mcW8UCLxXbFi+0+3szHw3kKoNWLhs5ACVE/ldGVHT24xWJeJdMKrEmw7StmsbJV4urjjQQV3R6ijpmpgIqOg2u4+dIrQOEGNFmF7WQ7IRVtKmuReUlsnWY51pgRtSjQQgWbVJRi81FfEWb4Vp4FlJaR9Jdy4hfVo9OrmtJkUvfhyVB63ZSi0P6VUdSSlt2nIjLO/1dAyKEbkqmYRuBFQH0hkW30kbGQ/sZgqAdOkHQnrMg1It+B+2ijIb2BVcD7XRPhIAW/kGQaBAkGgSJBkGiQZBoECQaBIkGQaJBkGgQJBoEiQZBokH8C8YpWY+uvrEIAAAAAElFTkSuQmCC">
+<link rel="apple-touch-icon" sizes="76x76" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEwAAABMCAIAAABI9cZ8AAAC8ElEQVR4nO2bzWsTQRTAM5tJYppoYyOttVpbxYsXP6CKtIgHPVlvXjx6EnouHjxYKOKhKAiKIOJB/QcED14EQdRLQVREvAhFlDRa1KjVNtkPD5um28Tuzsy++WB2fqcwm8x7v7yZ2dlkF82Pjqd0x5KdgAiMpC4YSV0wkrqQCEksIEbfs4fhb6iOneKaAOK044kUWw8ewvCSzHpBYFUhJUH0gkCpwkiC6wWJrwqwunI1BOk/ViV567XBXFL2Sgo2jBORUVK8YZy4LJKyDJmjU0vKNWTLgU5SBUMfqkwSsUGnkFSnjD7k+ZBKqmboQ5iVGa4rqFlGH5LcTCVTqZTaZfSJzDARlYy4CqEq44/z08svZv/72bZDq+EzGBULeHhndmR//uQJq6dEHq6NkGsUyZX0Grb7vVZ/+eb3rXsLZ84tPX7KI4pCw9Vb/FObvlqffQXes4ifJDtpjmTXtT9VFm/fX3ryvHnAdX/duFO+ex02XFglua+rloUHB7qnJtMD/a02+8OcM/+FobOQbBUYrhhn9+0NNjiVKmwEBST5o4Ckbddfvws2pLf2wUaQs/A0WVl4nM+VVhvePZTu74WNI0dy3RO3hTZOnAUPJ7WSa0Fd+U2TE9nDB8F7li2JsVUs4KEd2ZED+fHjVrmHSxAenUYi+MpGgdWVP4mX5P0vNyyiLrU8D7I3OCAlnYVvrdeoWADsOSZgq6tT/erMfVztd/u24NHSzEWoQAxEVJJkWnrL9cbb97ULl72G3WrMjR2KmxoN4XnGreTfB49+XrnZ1pju3dJ1WqFFK3pO0q6xeHiwdO2SyDkZmSHEnEQIbchZ5c2ZPbtyR4/kjo2ijOzd4lpIb4xQ9idmkoGW+B1PEDV3P4RZUVRSNU/yfMxw7UCdYlJlQl1JFTxpc2AZrnI9GaIzzklZnmxx2Rce8Z7MEQFu6hWwGYr5hQKcQniXNH7/5h50JjR/miCI5s+FdKLtEz5KYTboumAkdcFI6kIiJP8BoP/vhrnmZCYAAAAASUVORK5CYII=">
+<link rel="icon" type="image/png" sizes="192x192" href="data:image/png;base64,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">
+<link rel="icon" type="image/png" sizes="512x512" href="data:image/png;base64,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">
+<style>
+:root{
+  --red:#e83b4c;--red-d:#c0302e;--red-l:#fde8ea;
+  --blue:#185fa5;--blue-l:#e6f1fb;
+  --green:#3b6d11;--green-l:#eaf3de;
+  --amber:#854f0b;--amber-l:#faeeda;
+  --purple:#3c3489;--purple-l:#eeedfe;
+  --bg:#f5f5f7;--card:#fff;--bdr:#e5e5e5;
+  --txt:#1a1a1a;--sub:#666;--hint:#aaa;
+  --safe-t:env(safe-area-inset-top,44px);
+  --safe-b:env(safe-area-inset-bottom,20px);
+}
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent;
+   font-family:-apple-system,BlinkMacSystemFont,'Hiragino Sans','Helvetica Neue',sans-serif;
+   -webkit-text-size-adjust:100%;}
+html,body{height:100%;overflow:hidden;background:#e83b4c}
+.app{display:flex;flex-direction:column;height:100vh;height:100dvh;max-width:480px;margin:0 auto;background:var(--bg)}
+
+/* STATUS BAR SPACER */
+.status-space{height:var(--safe-t);background:#e83b4c;flex-shrink:0}
+
+/* HEADER */
+.hdr{background:#e83b4c;padding:10px 16px 0;flex-shrink:0}
+.hdr-row1{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:6px}
+.hdr-title{color:#fff}
+.hdr-title h1{font-size:19px;font-weight:700;letter-spacing:-.3px}
+.hdr-title p{font-size:11px;opacity:.8;margin-top:1px}
+.hdr-weather{background:rgba(255,255,255,.2);border-radius:12px;padding:6px 11px;text-align:center;color:#fff}
+.hdr-weather .t{font-size:18px;line-height:1.1}
+.hdr-weather .d{font-size:9px;opacity:.9;margin-top:1px}
+.hdr-chips{display:flex;gap:6px;padding-bottom:10px;overflow-x:auto;scrollbar-width:none}
+.hdr-chips::-webkit-scrollbar{display:none}
+.chip{background:rgba(255,255,255,.18);border-radius:20px;padding:4px 11px;font-size:11px;color:#fff;white-space:nowrap;cursor:pointer;border:1.5px solid transparent;flex-shrink:0;transition:.15s}
+.chip.editing{background:rgba(255,255,255,.35);border-color:rgba(255,255,255,.6)}
+
+/* EDIT MODAL */
+.modal-bg{display:none;position:fixed;inset:0;background:rgba(0,0,0,.45);z-index:999;align-items:flex-end;justify-content:center}
+.modal-bg.show{display:flex}
+.modal{background:var(--card);border-radius:20px 20px 0 0;width:100%;max-width:480px;padding:20px 20px calc(20px + var(--safe-b));animation:slideUp .25s ease}
+@keyframes slideUp{from{transform:translateY(100%)}to{transform:translateY(0)}}
+.modal h3{font-size:16px;font-weight:700;margin-bottom:14px;color:var(--txt)}
+.modal label{font-size:12px;color:var(--sub);margin-bottom:4px;display:block}
+.modal input{width:100%;padding:11px 13px;border-radius:10px;border:1px solid var(--bdr);font-size:14px;color:var(--txt);background:#f9f9f9;outline:none;margin-bottom:12px;-webkit-appearance:none}
+.modal input:focus{border-color:var(--red);background:#fff}
+.modal-btns{display:flex;gap:10px;margin-top:4px}
+.modal-btns button{flex:1;padding:12px;border-radius:12px;font-size:14px;font-weight:600;border:none;cursor:pointer}
+.btn-cancel{background:#f0f0f0;color:var(--sub)}
+.btn-save{background:var(--red);color:#fff}
+
+/* TABS */
+.tab-bar{display:flex;background:var(--card);border-bottom:1px solid var(--bdr);flex-shrink:0;overflow-x:auto;scrollbar-width:none}
+.tab-bar::-webkit-scrollbar{display:none}
+.tb{flex:1;min-width:52px;padding:9px 2px 8px;border:none;background:transparent;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:3px;font-size:9px;color:var(--sub);border-bottom:2.5px solid transparent;white-space:nowrap;transition:.15s}
+.tb.on{color:var(--red);border-bottom-color:var(--red)}
+.tb svg{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+
+/* SCROLL AREA */
+.scroll{flex:1;overflow-y:auto;-webkit-overflow-scrolling:touch;overscroll-behavior:contain}
+.page{display:none;padding:14px 14px 30px}
+.page.on{display:block}
+
+/* COMPONENTS */
+.sec{font-size:11px;font-weight:700;color:var(--sub);letter-spacing:.06em;text-transform:uppercase;margin:16px 0 8px}
+.sec:first-child{margin-top:4px}
+.card{background:var(--card);border-radius:14px;border:1px solid var(--bdr);padding:12px 14px;margin-bottom:10px}
+.row{display:flex;align-items:center;gap:10px}
+.ibox{width:46px;height:46px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0}
+.h4{font-size:14px;font-weight:600;color:var(--txt)}
+.p2{font-size:12px;color:var(--sub);margin-top:2px;line-height:1.5}
+.tag{display:inline-block;font-size:10px;padding:2px 8px;border-radius:20px;margin-top:5px;margin-right:3px;font-weight:600}
+.tr{background:var(--red-l);color:var(--red-d)}
+.tb2{background:var(--blue-l);color:var(--blue)}
+.tg{background:var(--green-l);color:var(--green)}
+.ta{background:var(--amber-l);color:var(--amber)}
+.tp{background:var(--purple-l);color:var(--purple)}
+
+/* HERO */
+.hero{background:linear-gradient(135deg,#c0302e,#e83b4c);border-radius:16px;padding:16px;color:#fff;margin-bottom:10px;position:relative;overflow:hidden}
+.hero-deco{position:absolute;right:-15px;top:-15px;font-size:75px;opacity:.15}
+.hero h2{font-size:22px;font-weight:700}
+.hero p{font-size:12px;opacity:.85;margin-top:3px}
+.hero-stats{display:flex;gap:8px;margin-top:12px}
+.hstat{background:rgba(255,255,255,.2);border-radius:10px;padding:6px 11px;text-align:center}
+.hstat .n{font-size:20px;font-weight:700}
+.hstat .l{font-size:9px;opacity:.85}
+
+/* SPOT GRID */
+.spot-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:10px}
+.scard{background:var(--card);border-radius:14px;border:1px solid var(--bdr);padding:12px;cursor:pointer;transition:.15s;-webkit-user-select:none}
+.scard:active{transform:scale(.96);background:#fafafa}
+.scard .em{font-size:28px;margin-bottom:7px}
+.scard .nm{font-size:13px;font-weight:600;color:var(--txt)}
+.scard .ds{font-size:11px;color:var(--sub);margin-top:3px;line-height:1.4}
+.scard .fe{font-size:11px;color:var(--red);font-weight:600;margin-top:6px}
+
+/* FOOD SCROLL */
+.fscroll{display:flex;gap:10px;overflow-x:auto;padding-bottom:6px;scrollbar-width:none}
+.fscroll::-webkit-scrollbar{display:none}
+.fcard{background:var(--card);border-radius:14px;border:1px solid var(--bdr);padding:12px;min-width:120px;flex-shrink:0}
+.fcard .em{font-size:24px;margin-bottom:5px}
+.fcard .nm{font-size:12px;font-weight:600;color:var(--txt)}
+.fcard .pr{font-size:11px;color:var(--red);margin-top:3px}
+.fcard .lc{font-size:10px;color:var(--sub);margin-top:2px}
+
+/* ITINERARY */
+.day-block{background:var(--card);border-radius:14px;border:1px solid var(--bdr);margin-bottom:10px;overflow:hidden}
+.day-hdr{background:var(--red);color:#fff;padding:9px 14px;font-size:13px;font-weight:700;display:flex;justify-content:space-between}
+.day-hdr span{font-size:11px;opacity:.8;font-weight:400}
+.ditem{display:flex;gap:10px;padding:10px 14px;border-bottom:1px solid var(--bdr)}
+.ditem:last-child{border:none}
+.tcol{width:38px;flex-shrink:0;display:flex;flex-direction:column;align-items:center;gap:3px}
+.tlbl{font-size:10px;color:var(--sub);font-weight:600}
+.tdot{width:8px;height:8px;border-radius:50%;background:var(--red)}
+.imain{font-size:13px;font-weight:600;color:var(--txt)}
+.isub{font-size:11px;color:var(--sub);margin-top:2px;line-height:1.5}
+
+/* MAP */
+.map-modes{display:flex;gap:7px;margin-bottom:10px;overflow-x:auto;scrollbar-width:none;padding-bottom:2px}
+.map-modes::-webkit-scrollbar{display:none}
+.mmode{flex-shrink:0;padding:8px 14px;border-radius:20px;border:1px solid var(--bdr);background:var(--card);font-size:12px;font-weight:600;cursor:pointer;color:var(--sub);transition:.15s}
+.mmode.on{background:var(--red);color:#fff;border-color:var(--red)}
+.map-frame{border-radius:14px;overflow:hidden;border:1px solid var(--bdr);margin-bottom:10px;height:240px;position:relative;background:#ddeef7}
+.map-frame iframe{width:100%;height:100%;border:none;display:block}
+.map-overlay-btn{position:absolute;bottom:10px;right:10px;background:var(--red);color:#fff;border:none;border-radius:10px;padding:8px 14px;font-size:12px;font-weight:700;cursor:pointer;z-index:10;box-shadow:0 2px 8px rgba(0,0,0,.15)}
+.loc-pill{background:var(--card);border:1px solid var(--bdr);border-radius:10px;padding:8px 12px;display:flex;align-items:center;gap:8px;margin-bottom:10px}
+.pulse{width:10px;height:10px;border-radius:50%;background:var(--red);flex-shrink:0;animation:pulse 1.5s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
+.mpanel{display:none}
+.mpanel.on{display:block}
+.lrow{display:flex;align-items:center;gap:10px;padding:9px 0;border-bottom:1px solid var(--bdr)}
+.lrow:last-child{border:none}
+.ldot{width:14px;height:14px;border-radius:50%;flex-shrink:0}
+.rstep{display:flex;gap:10px;padding:9px 0;border-bottom:1px solid var(--bdr);align-items:flex-start}
+.rstep:last-child{border:none}
+.rnum{width:22px;height:22px;border-radius:50%;background:var(--red);color:#fff;font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.nb-scroll{display:flex;gap:10px;overflow-x:auto;padding-bottom:6px;scrollbar-width:none;margin-bottom:10px}
+.nb-scroll::-webkit-scrollbar{display:none}
+.nbcard{background:var(--card);border-radius:14px;border:1px solid var(--bdr);padding:12px;min-width:108px;flex-shrink:0;text-align:center}
+.tip-box{background:var(--red-l);border-radius:10px;padding:8px 12px;font-size:12px;color:var(--red-d);line-height:1.6;margin-top:6px}
+
+/* AI */
+.ai-wrap{background:var(--card);border-radius:14px;border:1px solid var(--bdr);padding:14px;margin-bottom:10px}
+.ai-irow{display:flex;gap:8px;margin-bottom:10px}
+.ai-inp{flex:1;padding:11px 13px;border-radius:10px;border:1px solid var(--bdr);background:#f9f9f9;font-size:13px;color:var(--txt);outline:none;-webkit-appearance:none}
+.ai-inp:focus{border-color:var(--red);background:#fff}
+.ai-btn{padding:11px 16px;border-radius:10px;border:none;background:var(--red);color:#fff;font-size:13px;font-weight:700;cursor:pointer;white-space:nowrap}
+.ai-out{font-size:13px;color:var(--txt);line-height:1.8;min-height:40px}
+.qbtns{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:10px}
+.qbtn{padding:7px 13px;border-radius:20px;border:1px solid var(--bdr);background:var(--card);font-size:12px;cursor:pointer;color:var(--txt);font-weight:500}
+.qbtn:active{background:var(--red-l)}
+
+/* PHRASES */
+.ph-item{display:flex;justify-content:space-between;align-items:center;padding:11px 0;border-bottom:1px solid var(--bdr)}
+.ph-item:last-child{border:none}
+.ph-jp{font-size:16px;font-weight:700;color:var(--red)}
+.ph-zh{font-size:12px;color:var(--txt);margin-top:2px}
+.ph-rom{font-size:10px;color:var(--hint);margin-top:1px}
+.spk{background:var(--red-l);border:none;border-radius:8px;padding:7px 11px;font-size:13px;cursor:pointer;color:var(--red-d);flex-shrink:0}
+
+/* BUDGET */
+.bsum{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-bottom:10px}
+.bstat{background:#f9f9f9;border-radius:10px;padding:10px 8px;text-align:center;border:1px solid var(--bdr)}
+.bstat .bl{font-size:10px;color:var(--sub);margin-bottom:3px}
+.bstat .bv{font-size:16px;font-weight:700;color:var(--txt)}
+.bstat.hi .bv{color:var(--red)}
+.prog-bg{height:6px;background:#f0f0f0;border-radius:3px;overflow:hidden;margin:6px 0 3px}
+.prog-f{height:6px;background:var(--red);border-radius:3px}
+.erow{display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid var(--bdr)}
+.erow:last-child{border:none}
+.elbl{font-size:13px;font-weight:500;color:var(--txt)}
+.eby{font-size:10px;color:var(--sub);margin-top:2px}
+.eamt{font-size:13px;font-weight:700;color:var(--red);text-align:right}
+.eper{font-size:10px;color:var(--sub);text-align:right;margin-top:2px}
+.mrow{display:flex;align-items:center;gap:10px;padding:9px 0;border-bottom:1px solid var(--bdr)}
+.mrow:last-child{border:none}
+.av{width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;flex-shrink:0}
+.mn{font-size:13px;font-weight:600;color:var(--txt)}
+.ma{font-size:11px;color:var(--sub);margin-top:1px}
+.bdg{font-size:10px;padding:3px 9px;border-radius:20px;margin-left:auto;font-weight:600;flex-shrink:0}
+.paid{background:var(--green-l);color:var(--green)}
+.unpaid{background:var(--red-l);color:var(--red-d)}
+.settle{background:var(--red-l);border-radius:10px;padding:10px 14px;margin:8px 0;font-size:13px;color:var(--red-d);line-height:1.8}
+.sgrid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:10px}
+.sbtn{padding:11px 8px;border-radius:12px;border:1px solid var(--bdr);background:#f9f9f9;font-size:12px;cursor:pointer;color:var(--txt);font-weight:600;text-align:center}
+
+/* DISCUSS */
+.chatbox{background:#f9f9f9;border-radius:14px;border:1px solid var(--bdr);padding:10px;margin-bottom:10px;height:220px;overflow-y:auto;-webkit-overflow-scrolling:touch}
+.cmsg{margin-bottom:10px}
+.cmsg:last-child{margin-bottom:0}
+.cmhdr{display:flex;align-items:baseline;gap:6px;margin-bottom:3px}
+.cmname{font-size:12px;font-weight:700}
+.cmtime{font-size:10px;color:var(--hint)}
+.cmtxt{font-size:13px;color:var(--txt);line-height:1.6;background:var(--card);border-radius:10px;padding:7px 11px;display:inline-block;max-width:92%}
+.cinrow{display:flex;gap:8px;margin-bottom:12px}
+.cinput{flex:1;padding:11px 13px;border-radius:10px;border:1px solid var(--bdr);background:var(--card);font-size:13px;color:var(--txt);outline:none;-webkit-appearance:none}
+.csend{padding:11px 16px;border-radius:10px;border:none;background:var(--red);color:#fff;font-size:13px;font-weight:700;cursor:pointer}
+.vrow{display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid var(--bdr)}
+.vrow:last-child{border:none}
+.vq{font-size:13px;font-weight:500;color:var(--txt)}
+.vs{font-size:11px;color:var(--sub);margin-top:2px}
+.titem{display:flex;align-items:center;gap:10px;padding:8px 0;border-bottom:1px solid var(--bdr);font-size:13px}
+.titem:last-child{border:none}
+.tic{font-size:16px;width:22px;text-align:center;flex-shrink:0}
+.ttxt{flex:1;color:var(--txt)}
+.ai-sec-out{display:none}
+.ai-cta{width:100%;padding:13px;border-radius:12px;border:none;background:var(--red);color:#fff;font-size:13px;font-weight:700;cursor:pointer;margin-top:4px;display:flex;align-items:center;justify-content:center;gap:6px}
+.bigbtn{width:100%;padding:12px;border-radius:12px;border:1px solid var(--bdr);background:#f9f9f9;color:var(--red);font-size:13px;font-weight:600;cursor:pointer;margin-top:8px;text-align:center}
+
+/* SOS */
+.sos-hdr{background:var(--red);border-radius:14px;padding:14px;color:#fff;margin-bottom:10px}
+.sos-hdr h3{font-size:16px;font-weight:700;margin-bottom:6px}
+.sos-info{font-size:12px;line-height:2.1;opacity:.92}
+.sos-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:10px}
+.sos-btn{padding:14px 8px;border-radius:12px;border:none;font-size:12px;font-weight:700;cursor:pointer;line-height:1.5;text-align:center}
+
+/* INSTALL BANNER */
+.install-bar{background:#fff8f0;border:1px solid #f5a623;border-radius:12px;padding:11px 13px;margin-bottom:12px;display:flex;align-items:center;gap:10px}
+.install-bar .ico{font-size:22px;flex-shrink:0}
+.install-bar .txt{font-size:12px;color:#633806;line-height:1.5;flex:1}
+.install-bar .cls{background:none;border:none;font-size:18px;color:var(--sub);cursor:pointer;padding:0 4px;flex-shrink:0}
+</style>
+</head>
+<body>
+<div class="app">
+  <div class="status-space"></div>
+
+  <!-- HEADER -->
+  <div class="hdr">
+    <div class="hdr-row1">
+      <div class="hdr-title">
+        <h1>🗾 Japan Travel PRO</h1>
+        <p id="hdr-sub">東京・5天4夜・4人同行</p>
+      </div>
+      <div class="hdr-weather">
+        <div class="t" id="hdr-city">🌸</div>
+        <div class="d" id="hdr-temp">18°C 晴</div>
+      </div>
+    </div>
+    <div class="hdr-chips" id="chips-row">
+      <div class="chip" id="chip-date" onclick="openEdit('date')">📅 <span id="lbl-date">2026/4/20</span></div>
+      <div class="chip" id="chip-people" onclick="openEdit('people')">👥 <span id="lbl-people">小明・小花・阿偉・小玲</span></div>
+      <div class="chip" id="chip-budget" onclick="openEdit('budget')">💰 <span id="lbl-budget">NT$55,000</span></div>
+      <div class="chip" id="chip-hotel" onclick="openEdit('hotel')">🏨 <span id="lbl-hotel">新宿王子飯店</span></div>
+      <div class="chip" id="chip-city" onclick="openEdit('city')">🗺️ <span id="lbl-city">東京</span></div>
+    </div>
+  </div>
+
+  <!-- EDIT MODAL -->
+  <div class="modal-bg" id="editModal" onclick="closeEditOutside(event)">
+    <div class="modal" id="editModalInner">
+      <h3 id="modal-title">編輯資訊</h3>
+      <label id="modal-label">內容</label>
+      <input type="text" id="modal-input" />
+      <div class="modal-btns">
+        <button class="btn-cancel" onclick="closeEdit()">取消</button>
+        <button class="btn-save" onclick="saveEdit()">儲存</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- TAB BAR -->
+  <div class="tab-bar">
+    <button class="tb on" onclick="goTab('explore')">
+      <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>探索
+    </button>
+    <button class="tb" onclick="goTab('itinerary')">
+      <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>行程
+    </button>
+    <button class="tb" onclick="goTab('ai')">
+      <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M4.22 4.22l2.12 2.12M17.66 17.66l2.12 2.12M2 12h3M19 12h3M4.22 19.78l2.12-2.12M17.66 6.34l2.12-2.12"/></svg>AI
+    </button>
+    <button class="tb" onclick="goTab('map')">
+      <svg viewBox="0 0 24 24"><polygon points="3 6 9 3 15 6 21 3 21 18 15 21 9 18 3 21"/><line x1="9" y1="3" x2="9" y2="18"/><line x1="15" y1="6" x2="15" y2="21"/></svg>地圖
+    </button>
+    <button class="tb" onclick="goTab('phrase')">
+      <svg viewBox="0 0 24 24"><path d="m5 8 6 6m-7 0 6-6 2-3M2 5h12M7 2h1M22 22l-5-10-5 10M14 18h6"/></svg>日語
+    </button>
+    <button class="tb" onclick="goTab('budget')">
+      <svg viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>預算
+    </button>
+    <button class="tb" onclick="goTab('discuss')">
+      <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>共規劃
+    </button>
+  </div>
+
+  <!-- SCROLL AREA -->
+  <div class="scroll" id="mainScroll">
+
+    <!-- 探索 -->
+    <div class="page on" id="pg-explore">
+      <div id="install-banner" class="install-bar">
+        <div class="ico">📲</div>
+        <div class="txt"><strong>加入主畫面</strong>：Safari → 分享 → 加入主畫面，即可像真正 APP 一樣使用！</div>
+        <button class="cls" onclick="document.getElementById('install-banner').style.display='none'">✕</button>
+      </div>
+      <div class="hero">
+        <div class="hero-deco">🗾</div>
+        <h2>Japan Travel PRO</h2>
+        <p id="hero-sub">東京・5天4夜完整攻略</p>
+        <div class="hero-stats">
+          <div class="hstat"><div class="n">5</div><div class="l">天</div></div>
+          <div class="hstat"><div class="n">4</div><div class="l">晚</div></div>
+          <div class="hstat"><div class="n">20+</div><div class="l">景點</div></div>
+          <div class="hstat"><div class="n" id="hero-pcount">4</div><div class="l">人</div></div>
+        </div>
+      </div>
+      <div class="sec">熱門景點</div>
+      <div class="spot-grid">
+        <div class="scard" onclick="goSpot('淺草寺，日本最古老寺廟之一，雷門大燈籠、仲見世通購物街')"><div class="em">⛩️</div><div class="nm">淺草寺</div><div class="ds">雷門大燈籠，仲見世通漫步</div><div class="fe">免費入場</div><span class="tag tr">文化</span></div>
+        <div class="scard" onclick="goSpot('東京晴空塔，世界第二高塔634公尺，夜景觀景台')"><div class="em">🗼</div><div class="nm">東京晴空塔</div><div class="ds">世界第二高塔，夜景絕美</div><div class="fe">¥2,100起</div><span class="tag tb2">觀景</span></div>
+        <div class="scard" onclick="goSpot('上野公園，東京最著名賞櫻地點，上野動物園和多個博物館')"><div class="em">🌸</div><div class="nm">上野公園</div><div class="ds">春季賞櫻聖地，博物館群集</div><div class="fe">免費入場</div><span class="tag tg">自然</span></div>
+        <div class="scard" onclick="goSpot('秋葉原，電器動漫聖地，Yodobashi Camera、女僕咖啡、動漫周邊')"><div class="em">🎌</div><div class="nm">秋葉原</div><div class="ds">電器動漫聖地，3C控天堂</div><div class="fe">自由消費</div><span class="tag tp">動漫</span></div>
+        <div class="scard" onclick="goSpot('新宿御苑，市中心大型庭園，春天賞櫻、秋天賞楓都很棒')"><div class="em">🏯</div><div class="nm">新宿御苑</div><div class="ds">市中心綠洲，四季皆美</div><div class="fe">¥500</div><span class="tag tg">自然</span></div>
+        <div class="scard" onclick="goSpot('築地外場市場，海鮮丼、玉子燒、各式海鮮早市')"><div class="em">🍣</div><div class="nm">築地市場</div><div class="ds">海鮮丼玉子燒，早起必吃</div><div class="fe">自由消費</div><span class="tag tr">美食</span></div>
+        <div class="scard" onclick="goSpot('明治神宮，位於原宿的森林系神社，城市中的靜謐聖地')"><div class="em">🌳</div><div class="nm">明治神宮</div><div class="ds">城市森林神社，靜謐氛圍</div><div class="fe">免費入場</div><span class="tag tg">文化</span></div>
+        <div class="scard" onclick="goSpot('台場海濱公園，彩虹橋夜景、TeamLab光影藝術展')"><div class="em">🌉</div><div class="nm">台場</div><div class="ds">彩虹橋夜景，TeamLab</div><div class="fe">免費入場</div><span class="tag tb2">打卡</span></div>
+      </div>
+      <div class="sec">🍜 必吃美食</div>
+      <div class="fscroll">
+        <div class="fcard"><div class="em">🍜</div><div class="nm">一蘭拉麵</div><div class="pr">¥1,200起</div><div class="lc">淺草・新宿</div></div>
+        <div class="fcard"><div class="em">🍣</div><div class="nm">海鮮丼</div><div class="pr">¥800起</div><div class="lc">築地・豐洲</div></div>
+        <div class="fcard"><div class="em">🍡</div><div class="nm">人形燒</div><div class="pr">¥500/6個</div><div class="lc">淺草仲見世</div></div>
+        <div class="fcard"><div class="em">🍢</div><div class="nm">居酒屋串燒</div><div class="pr">¥2,000起</div><div class="lc">新宿・澀谷</div></div>
+        <div class="fcard"><div class="em">🍦</div><div class="nm">抹茶冰淇淋</div><div class="pr">¥500</div><div class="lc">原宿竹下通</div></div>
+        <div class="fcard"><div class="em">🍱</div><div class="nm">便利商店美食</div><div class="pr">¥200起</div><div class="lc">全國7-11</div></div>
+      </div>
+      <div class="sec">🛍️ 購物攻略</div>
+      <div class="card"><div class="row"><div class="ibox" style="background:var(--amber-l)">🛍️</div><div><div class="h4">銀座・高端百貨</div><div class="p2">GINZA SIX、三越、免稅購物</div><span class="tag ta">免稅</span><span class="tag tr">高端</span></div></div></div>
+      <div class="card"><div class="row"><div class="ibox" style="background:var(--purple-l)">🎮</div><div><div class="h4">秋葉原・電器動漫</div><div class="p2">Yodobashi Camera、動漫周邊</div><span class="tag tp">動漫</span><span class="tag tb2">3C</span></div></div></div>
+      <div class="card"><div class="row"><div class="ibox" style="background:var(--red-l)">👗</div><div><div class="h4">原宿・潮流時尚</div><div class="p2">竹下通、表參道品牌街</div><span class="tag tr">潮流</span><span class="tag tg">必逛</span></div></div></div>
+    </div>
+
+    <!-- 行程 -->
+    <div class="page" id="pg-itinerary">
+      <div class="day-block">
+        <div class="day-hdr">Day 1 · 4/20 抵達 + 淺草 <span>成田機場入境</span></div>
+        <div class="ditem"><div class="tcol"><span class="tlbl">08:00</span><div class="tdot"></div></div><div><div class="imain">✈️ 桃園機場出發</div><div class="isub">建議提前2小時，帶好護照及Suica申請資料</div></div></div>
+        <div class="ditem"><div class="tcol"><span class="tlbl">13:00</span><div class="tdot"></div></div><div><div class="imain">🛬 成田機場抵達</div><div class="isub">辦理入境・購Suica IC卡・領Wi-Fi分享器</div></div></div>
+        <div class="ditem"><div class="tcol"><span class="tlbl">14:30</span><div class="tdot"></div></div><div><div class="imain">🚆 N'EX 至新宿（60分）</div><div class="isub">¥3,070/人，先入住飯店放行李</div></div></div>
+        <div class="ditem"><div class="tcol"><span class="tlbl">16:30</span><div class="tdot"></div></div><div><div class="imain">⛩️ 淺草寺 + 仲見世通</div><div class="isub">雷門打卡・人形燒・伴手禮</div></div></div>
+        <div class="ditem"><div class="tcol"><span class="tlbl">19:00</span><div class="tdot"></div></div><div><div class="imain">🍜 晚餐：一蘭拉麵淺草店</div><div class="isub">個人隔間體驗，排隊約30分</div></div></div>
+      </div>
+      <div class="day-block">
+        <div class="day-hdr">Day 2 · 4/21 上野 + 秋葉原 <span>文化與電器</span></div>
+        <div class="ditem"><div class="tcol"><span class="tlbl">09:00</span><div class="tdot"></div></div><div><div class="imain">🌸 上野公園 + 博物館</div><div class="isub">賞櫻・東京國立博物館¥1,000</div></div></div>
+        <div class="ditem"><div class="tcol"><span class="tlbl">13:00</span><div class="tdot"></div></div><div><div class="imain">🍱 午餐：阿美橫丁</div><div class="isub">各種小吃攤，熱鬧市集</div></div></div>
+        <div class="ditem"><div class="tcol"><span class="tlbl">15:00</span><div class="tdot"></div></div><div><div class="imain">🎌 秋葉原電器街</div><div class="isub">Yodobashi・動漫周邊・女僕咖啡</div></div></div>
+        <div class="ditem"><div class="tcol"><span class="tlbl">19:30</span><div class="tdot"></div></div><div><div class="imain">🗼 晴空塔夜景</div><div class="isub">展望台¥2,100，建議網路提前購票</div></div></div>
+      </div>
+      <div class="day-block">
+        <div class="day-hdr">Day 3 · 4/22 新宿 + 原宿 <span>西側精華</span></div>
+        <div class="ditem"><div class="tcol"><span class="tlbl">09:00</span><div class="tdot"></div></div><div><div class="imain">🌳 明治神宮</div><div class="isub">城市森林神社，感受靜謐</div></div></div>
+        <div class="ditem"><div class="tcol"><span class="tlbl">11:30</span><div class="tdot"></div></div><div><div class="imain">👗 原宿竹下通 + 表參道</div><div class="isub">潮流購物・可麗餅・IG打卡</div></div></div>
+        <div class="ditem"><div class="tcol"><span class="tlbl">15:00</span><div class="tdot"></div></div><div><div class="imain">🏯 新宿御苑</div><div class="isub">¥500，黃昏光線最美</div></div></div>
+        <div class="ditem"><div class="tcol"><span class="tlbl">19:00</span><div class="tdot"></div></div><div><div class="imain">🍢 歌舞伎町居酒屋</div><div class="isub">霓虹燈下串燒體驗</div></div></div>
+      </div>
+      <div class="day-block">
+        <div class="day-hdr">Day 4 · 4/23 台場 + 銀座 <span>海景購物</span></div>
+        <div class="ditem"><div class="tcol"><span class="tlbl">10:00</span><div class="tdot"></div></div><div><div class="imain">🌉 台場海濱公園</div><div class="isub">彩虹橋・自由女神・海景</div></div></div>
+        <div class="ditem"><div class="tcol"><span class="tlbl">13:30</span><div class="tdot"></div></div><div><div class="imain">🎆 TeamLab Planets</div><div class="isub">需提前訂票 ¥3,200/人，約2小時</div></div></div>
+        <div class="ditem"><div class="tcol"><span class="tlbl">17:00</span><div class="tdot"></div></div><div><div class="imain">🛍️ 銀座免稅掃貨</div><div class="isub">GINZA SIX・三越百貨</div></div></div>
+      </div>
+      <div class="day-block">
+        <div class="day-hdr">Day 5 · 4/24 築地 + 返台 <span>美食收尾</span></div>
+        <div class="ditem"><div class="tcol"><span class="tlbl">07:00</span><div class="tdot"></div></div><div><div class="imain">🍣 築地外場市場早市</div><div class="isub">海鮮丼・玉子燒必吃早餐</div></div></div>
+        <div class="ditem"><div class="tcol"><span class="tlbl">11:00</span><div class="tdot"></div></div><div><div class="imain">🧳 飯店退房寄行李</div><div class="isub">行李可寄放至下午取回</div></div></div>
+        <div class="ditem"><div class="tcol"><span class="tlbl">15:00</span><div class="tdot"></div></div><div><div class="imain">🚆 N'EX 至成田機場</div><div class="isub">提早3小時，免稅店最後購物</div></div></div>
+        <div class="ditem"><div class="tcol"><span class="tlbl">19:30</span><div class="tdot"></div></div><div><div class="imain">✈️ 搭機返回桃園</div><div class="isub">愉快旅程圓滿結束！</div></div></div>
+      </div>
+    </div>
+
+    <!-- AI -->
+    <div class="page" id="pg-ai">
+      <div class="sec" style="margin-top:4px">✦ AI 旅遊助手（Gemini 驅動）</div>
+      <div class="ai-wrap">
+        <div class="ai-irow">
+          <input class="ai-inp" id="ai-q" placeholder="例：幫我規劃雨天行程…" />
+          <button class="ai-btn" onclick="askAI()">問 AI</button>
+        </div>
+        <div class="ai-out" id="ai-out" style="color:var(--hint);font-size:12px">輸入任何旅遊問題，AI 即時回答 ✦</div>
+      </div>
+      <div class="sec">快捷提問</div>
+      <div class="qbtns">
+        <button class="qbtn" onclick="setQ('幫我規劃東京親子2天行程，小孩7歲，輕鬆為主')">👨‍👩‍👧 親子行程</button>
+        <button class="qbtn" onclick="setQ('東京美食主題1日遊，每人預算5000日幣')">🍜 美食主題</button>
+        <button class="qbtn" onclick="setQ('東京動漫聖地巡禮，秋葉原加池袋1天攻略')">🎌 動漫巡禮</button>
+        <button class="qbtn" onclick="setQ('東京購物行程，銀座表參道原宿一天規劃')">🛍️ 購物天堂</button>
+        <button class="qbtn" onclick="setQ('東京雨天備案行程，室內景點推薦')">☔ 雨天備案</button>
+        <button class="qbtn" onclick="setQ('東京深夜行程，晚上10點後還能去哪')">🌙 深夜探索</button>
+        <button class="qbtn" onclick="setQ('日本旅遊必備APP有哪些，台灣人適用')">📱 必備APP</button>
+        <button class="qbtn" onclick="setQ('東京交通攻略，Suica卡怎麼用，地鐵怎麼搭')">🚆 交通攻略</button>
+      </div>
+      <div class="sec">旅遊小知識</div>
+      <div class="card"><div class="h4">🌸 4月最佳賞櫻地點</div><div class="p2">上野公園・新宿御苑・千鳥之淵・目黑川。4月上中旬是滿開時期，建議清晨前往避開人潮。</div></div>
+      <div class="card"><div class="h4">💡 台灣人必知小提醒</div><div class="p2">✅ Suica卡入境即辦　✅ 離線地圖先下載　✅ 便利商店ATM可提日幣　✅ 多數餐廳有中文菜單</div></div>
+    </div>
+
+    <!-- 地圖 -->
+    <div class="page" id="pg-map">
+      <div class="map-modes">
+        <button class="mmode on" onclick="setMode('subway',this)">🚆 地鐵導航</button>
+        <button class="mmode" onclick="setMode('spots',this)">⛩ 周邊景點</button>
+        <button class="mmode" onclick="setMode('food',this)">🍜 美食推薦</button>
+        <button class="mmode" onclick="setMode('sos',this)">🆘 緊急求助</button>
+      </div>
+      <div class="map-frame" id="mapFrame">
+        <iframe id="gmap" src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d25933.564!2d139.7745!3d35.7128!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1szh-TW!2sjp!4v1" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <button class="map-overlay-btn" onclick="openGoogleMaps()">🗺️ 開啟 Google Maps</button>
+      </div>
+      <div class="loc-pill">
+        <div class="pulse"></div>
+        <div id="loc-txt" style="font-size:12px;color:var(--txt)">📍 點選上方按鈕開啟完整 Google Maps 導航</div>
+      </div>
+      <div class="mpanel on" id="mp-subway">
+        <div class="sec">主要地鐵路線</div>
+        <div class="card" style="padding:8px 14px 2px">
+          <div class="lrow"><div class="ldot" style="background:#e83b4c"></div><div style="flex:1"><div class="h4" style="font-size:13px">銀座線（G）</div><div class="p2">淺草 → 上野 → 銀座 → 渋谷・19站</div></div><span class="tag tr">¥170起</span></div>
+          <div class="lrow"><div class="ldot" style="background:#f5a623"></div><div style="flex:1"><div class="h4" style="font-size:13px">丸之內線（M）</div><div class="p2">池袋 → 新宿 → 東京・28站</div></div><span class="tag ta">¥170起</span></div>
+          <div class="lrow"><div class="ldot" style="background:#4a90e2"></div><div style="flex:1"><div class="h4" style="font-size:13px">日比谷線（H）</div><div class="p2">中目黑 → 銀座 → 上野・22站</div></div><span class="tag tb2">¥170起</span></div>
+          <div class="lrow"><div class="ldot" style="background:#7ed321"></div><div style="flex:1"><div class="h4" style="font-size:13px">JR 山手線</div><div class="p2">環狀線 30站，串聯新宿渋谷品川</div></div><span class="tag tg">¥140起</span></div>
+        </div>
+        <div class="sec">快速導航至景點</div>
+        <div class="card" style="padding:8px 14px 2px">
+          <div class="rstep"><div class="rnum">1</div><div><div style="font-size:13px;font-weight:600;color:var(--txt)">搜尋起點站</div><div style="font-size:11px;color:var(--sub);margin-top:2px">點下方按鈕，輸入目的地</div></div></div>
+          <div class="rstep"><div class="rnum">2</div><div><div style="font-size:13px;font-weight:600;color:var(--txt)">乘換案內 APP</div><div style="font-size:11px;color:var(--sub);margin-top:2px">最準確的日本電車路線查詢</div></div></div>
+          <div class="rstep"><div class="rnum">3</div><div><div style="font-size:13px;font-weight:600;color:var(--txt)">確認方向 & 搭乘</div><div style="font-size:11px;color:var(--sub);margin-top:2px">刷 Suica IC卡，輕鬆出入站</div></div></div>
+          <div class="tip-box">💡 提示：Google Maps 選擇「大眾運輸」模式，可查詢最新電車班次與換乘資訊！</div>
+        </div>
+        <button class="bigbtn" onclick="openGoogleMaps()">🗺️ 開啟 Google Maps 導航</button>
+      </div>
+      <div class="mpanel" id="mp-spots">
+        <div class="sec">精選景點（點擊開啟地圖）</div>
+        <div class="nb-scroll">
+          <div class="nbcard" onclick="openPlace('淺草寺 Tokyo')"><div style="font-size:24px;margin-bottom:6px">⛩️</div><div style="font-size:12px;font-weight:600;color:var(--txt)">淺草寺</div><div style="font-size:10px;color:var(--sub);margin-top:3px">🚆 銀座線</div></div>
+          <div class="nbcard" onclick="openPlace('東京晴空塔 Tokyo Skytree')"><div style="font-size:24px;margin-bottom:6px">🗼</div><div style="font-size:12px;font-weight:600;color:var(--txt)">晴空塔</div><div style="font-size:10px;color:var(--sub);margin-top:3px">🚆 半藏門線</div></div>
+          <div class="nbcard" onclick="openPlace('上野公園 Ueno Park Tokyo')"><div style="font-size:24px;margin-bottom:6px">🌸</div><div style="font-size:12px;font-weight:600;color:var(--txt)">上野公園</div><div style="font-size:10px;color:var(--sub);margin-top:3px">🚆 銀座線</div></div>
+          <div class="nbcard" onclick="openPlace('秋葉原 Akihabara Tokyo')"><div style="font-size:24px;margin-bottom:6px">🎌</div><div style="font-size:12px;font-weight:600;color:var(--txt)">秋葉原</div><div style="font-size:10px;color:var(--sub);margin-top:3px">🚆 日比谷線</div></div>
+          <div class="nbcard" onclick="openPlace('新宿御苑 Shinjuku Gyoen')"><div style="font-size:24px;margin-bottom:6px">🏯</div><div style="font-size:12px;font-weight:600;color:var(--txt)">新宿御苑</div><div style="font-size:10px;color:var(--sub);margin-top:3px">🚆 丸之內線</div></div>
+          <div class="nbcard" onclick="openPlace('台場 Odaiba Tokyo')"><div style="font-size:24px;margin-bottom:6px">🌉</div><div style="font-size:12px;font-weight:600;color:var(--txt)">台場</div><div style="font-size:10px;color:var(--sub);margin-top:3px">🚝 百合鷗線</div></div>
+        </div>
+        <div class="card"><div class="h4" style="margin-bottom:6px">📌 點擊景點卡片即可在 Google Maps 查看位置和路線</div><div class="p2">所有景點均連結至 Google Maps，可直接開啟導航前往</div></div>
+      </div>
+      <div class="mpanel" id="mp-food">
+        <div class="sec">🍜 必吃美食地圖</div>
+        <div class="card" onclick="openPlace('一蘭ラーメン 浅草店')"><div class="row"><div class="ibox" style="background:var(--amber-l)">🍜</div><div style="flex:1"><div class="h4">一蘭拉麵 淺草店</div><div class="p2">個人隔間豚骨拉麵</div></div><span class="tag tr">點擊導航</span></div></div>
+        <div class="card" onclick="openPlace('築地場外市場 Tsukiji Market')"><div class="row"><div class="ibox" style="background:var(--red-l)">🍣</div><div style="flex:1"><div class="h4">築地場外市場</div><div class="p2">海鮮丼・玉子燒・早市</div></div><span class="tag tr">點擊導航</span></div></div>
+        <div class="card" onclick="openPlace('アメ横 Ameyoko Tokyo')"><div class="row"><div class="ibox" style="background:var(--green-l)">🍱</div><div style="flex:1"><div class="h4">上野阿美橫丁</div><div class="p2">各種小吃攤，熱鬧市集</div></div><span class="tag tr">點擊導航</span></div></div>
+        <div class="card" onclick="openPlace('Harajuku takeshita street crepe')"><div class="row"><div class="ibox" style="background:var(--purple-l)">🍦</div><div style="flex:1"><div class="h4">原宿可麗餅</div><div class="p2">竹下通各式甜點・網紅打卡</div></div><span class="tag tr">點擊導航</span></div></div>
+      </div>
+      <div class="mpanel" id="mp-sos">
+        <div class="sos-hdr">
+          <h3>🆘 緊急求助 · 萬一走失</h3>
+          <div class="sos-info">📍 啟動位置：點下方按鈕取得目前座標<br>🏢 最近警察局：輸入「交番」至 Google Maps<br>📞 觀光諮詢（中文）：03-3201-3331</div>
+        </div>
+        <div class="sos-grid">
+          <button class="sos-btn" style="background:var(--red);color:#fff" onclick="askAISOS('我在日本走失了，幫我用日文寫一張求助紙條，說明我需要幫助找到飯店，請用日文大字印出來，讓我可以給當地人看')">📝 生成日文<br>求助紙條</button>
+          <button class="sos-btn" style="background:var(--blue);color:#fff" onclick="openGoogleMaps()">🗺️ 開啟<br>Google Maps</button>
+        </div>
+        <div class="card">
+          <div class="h4" style="margin-bottom:8px">📞 緊急聯絡</div>
+          <div style="font-size:13px;color:var(--sub);line-height:2.2">🚔 警察：<strong style="color:var(--txt)">110</strong><br>🚑 救護/消防：<strong style="color:var(--txt)">119</strong><br>📞 中文觀光諮詢：<strong style="color:var(--txt)">03-3201-3331</strong><br>🇹🇼 台灣駐日辦事處：<strong style="color:var(--txt)">03-3280-7811</strong></div>
+        </div>
+        <div class="card">
+          <div class="h4" style="margin-bottom:8px">📡 分享位置給同伴</div>
+          <div class="sos-grid">
+            <button class="sos-btn" style="background:var(--green-l);color:var(--green);font-size:13px" onclick="shareMyLocation()">📍 取得<br>我的位置</button>
+            <button class="sos-btn" style="background:var(--blue-l);color:var(--blue);font-size:13px" onclick="copyLocation()">📋 複製<br>座標連結</button>
+          </div>
+        </div>
+        <div id="sos-ai-out" class="card" style="display:none">
+          <div class="h4" style="margin-bottom:8px">✦ AI 生成結果</div>
+          <div id="sos-ai-txt" style="font-size:13px;color:var(--txt);line-height:1.8"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 日語 -->
+    <div class="page" id="pg-phrase">
+      <div class="sec" style="margin-top:4px">基本問候</div>
+      <div class="card" style="padding:4px 14px">
+        <div class="ph-item"><div><div class="ph-jp">こんにちは</div><div class="ph-zh">你好</div><div class="ph-rom">Konnichiwa</div></div><button class="spk" onclick="speak('こんにちは')">🔊</button></div>
+        <div class="ph-item"><div><div class="ph-jp">ありがとうございます</div><div class="ph-zh">非常感謝</div><div class="ph-rom">Arigatou gozaimasu</div></div><button class="spk" onclick="speak('ありがとうございます')">🔊</button></div>
+        <div class="ph-item"><div><div class="ph-jp">すみません</div><div class="ph-zh">不好意思</div><div class="ph-rom">Sumimasen</div></div><button class="spk" onclick="speak('すみません')">🔊</button></div>
+        <div class="ph-item"><div><div class="ph-jp">はい／いいえ</div><div class="ph-zh">是 / 不是</div><div class="ph-rom">Hai / Iie</div></div><button class="spk" onclick="speak('はい')">🔊</button></div>
+      </div>
+      <div class="sec">購物 · 餐廳</div>
+      <div class="card" style="padding:4px 14px">
+        <div class="ph-item"><div><div class="ph-jp">いくらですか</div><div class="ph-zh">這個多少錢？</div><div class="ph-rom">Ikura desu ka</div></div><button class="spk" onclick="speak('いくらですか')">🔊</button></div>
+        <div class="ph-item"><div><div class="ph-jp">これをください</div><div class="ph-zh">請給我這個</div><div class="ph-rom">Kore o kudasai</div></div><button class="spk" onclick="speak('これをください')">🔊</button></div>
+        <div class="ph-item"><div><div class="ph-jp">おすすめは何ですか</div><div class="ph-zh">有什麼推薦嗎？</div><div class="ph-rom">Osusume wa nan desu ka</div></div><button class="spk" onclick="speak('おすすめは何ですか')">🔊</button></div>
+        <div class="ph-item"><div><div class="ph-jp">免税になりますか</div><div class="ph-zh">可以免稅嗎？</div><div class="ph-rom">Menzei ni narimasu ka</div></div><button class="spk" onclick="speak('免税になりますか')">🔊</button></div>
+        <div class="ph-item"><div><div class="ph-jp">カードで払えますか</div><div class="ph-zh">可以刷卡嗎？</div><div class="ph-rom">Kaado de haraemasu ka</div></div><button class="spk" onclick="speak('カードで払えますか')">🔊</button></div>
+        <div class="ph-item"><div><div class="ph-jp">メニューを見せてください</div><div class="ph-zh">請給我看菜單</div><div class="ph-rom">Menyuu o misete kudasai</div></div><button class="spk" onclick="speak('メニューを見せてください')">🔊</button></div>
+      </div>
+      <div class="sec">問路 · 緊急</div>
+      <div class="card" style="padding:4px 14px">
+        <div class="ph-item"><div><div class="ph-jp">トイレはどこですか</div><div class="ph-zh">廁所在哪裡？</div><div class="ph-rom">Toire wa doko desu ka</div></div><button class="spk" onclick="speak('トイレはどこですか')">🔊</button></div>
+        <div class="ph-item"><div><div class="ph-jp">〇〇駅はどこですか</div><div class="ph-zh">〇〇站在哪裡？</div><div class="ph-rom">〇〇-eki wa doko desu ka</div></div><button class="spk" onclick="speak('駅はどこですか')">🔊</button></div>
+        <div class="ph-item"><div><div class="ph-jp">写真を撮ってもいいですか</div><div class="ph-zh">可以拍照嗎？</div><div class="ph-rom">Shashin o totte mo ii desu ka</div></div><button class="spk" onclick="speak('写真を撮ってもいいですか')">🔊</button></div>
+        <div class="ph-item"><div><div class="ph-jp">助けてください！</div><div class="ph-zh">請幫幫我！</div><div class="ph-rom">Tasukete kudasai!</div></div><button class="spk" onclick="speak('助けてください')">🔊</button></div>
+        <div class="ph-item"><div><div class="ph-jp">警察を呼んでください</div><div class="ph-zh">請幫我叫警察</div><div class="ph-rom">Keisatsu o yonde kudasai</div></div><button class="spk" onclick="speak('警察を呼んでください')">🔊</button></div>
+      </div>
+    </div>
+
+    <!-- 預算 -->
+    <div class="page" id="pg-budget">
+      <div class="bsum">
+        <div class="bstat"><div class="bl">總預算</div><div class="bv" id="b-total">55,000</div></div>
+        <div class="bstat hi"><div class="bl">已花費</div><div class="bv">47,800</div></div>
+        <div class="bstat"><div class="bl">每人均攤</div><div class="bv" id="b-per">11,950</div></div>
+      </div>
+      <div style="font-size:11px;color:var(--sub);display:flex;justify-content:space-between;margin-bottom:3px"><span>預算使用 87%</span><span>剩餘 NT$7,200</span></div>
+      <div class="prog-bg"><div class="prog-f" style="width:87%"></div></div>
+      <div class="sec">費用明細</div>
+      <div class="card" style="padding:8px 14px">
+        <div class="erow"><div><div class="elbl">✈️ 機票（4張）</div><div class="eby">小明代付</div></div><div><div class="eamt">NT$28,000</div><div class="eper">每人 NT$7,000</div></div></div>
+        <div class="erow"><div><div class="elbl">🏨 住宿（4晚）</div><div class="eby">小明代付</div></div><div><div class="eamt">NT$16,000</div><div class="eper">每人 NT$4,000</div></div></div>
+        <div class="erow"><div><div class="elbl">🚆 Suica IC卡</div><div class="eby">小花代付</div></div><div><div class="eamt">NT$3,600</div><div class="eper">每人 NT$900</div></div></div>
+        <div class="erow"><div><div class="elbl">🍜 餐飲費用</div><div class="eby">各自分攤</div></div><div><div class="eamt">NT$4,800</div><div class="eper">每人 NT$1,200</div></div></div>
+        <div class="erow"><div><div class="elbl">🎡 景點門票</div><div class="eby">各自分攤</div></div><div><div class="eamt">NT$3,200</div><div class="eper">每人 NT$800</div></div></div>
+        <div style="display:flex;justify-content:space-between;padding-top:10px;border-top:1px solid var(--bdr);margin-top:4px;font-size:14px;font-weight:700"><span>合計</span><span style="color:var(--red)">NT$55,600</span></div>
+      </div>
+      <div class="sec">團員付款狀況</div>
+      <div class="card" style="padding:8px 14px">
+        <div class="mrow"><div class="av" style="background:var(--red-l);color:var(--red-d)">明</div><div><div class="mn">林小明（你）</div><div class="ma">代墊 NT$44,000</div></div><div class="bdg paid">主帳</div></div>
+        <div class="mrow"><div class="av" style="background:var(--blue-l);color:var(--blue)">花</div><div><div class="mn">王小花</div><div class="ma">應付 NT$11,950</div></div><div class="bdg paid">✓ 已付</div></div>
+        <div class="mrow"><div class="av" style="background:var(--green-l);color:var(--green)">偉</div><div><div class="mn">陳大偉</div><div class="ma">應付 NT$11,950</div></div><div class="bdg paid">✓ 已付</div></div>
+        <div class="mrow"><div class="av" style="background:var(--amber-l);color:var(--amber)">玲</div><div><div class="mn">許小玲</div><div class="ma">應付 NT$11,950</div></div><div class="bdg unpaid">⏳ 未付</div></div>
+      </div>
+      <div class="settle">💰 小玲需轉帳 <strong>NT$11,950</strong> 給小明<br>方式：LINE Pay / 台銀匯款 / 現金均可</div>
+      <div class="sgrid">
+        <button class="sbtn" onclick="askAIBudget('幫我用友善的繁體中文寫一段LINE訊息，提醒朋友許小玲需要轉帳NT$11,950給我林小明，用於東京旅遊費用分攤，語氣要輕鬆友善')">📱 催款 LINE 訊息</button>
+        <button class="sbtn" onclick="askAIBudget('幫我整理一份東京4人旅遊費用報告，總費用NT$55,600，說明每人應付多少、誰代墊什麼、誰欠誰多少')">📊 產生費用報告</button>
+      </div>
+      <div id="budget-ai-out" class="card" style="display:none;margin-top:10px">
+        <div class="h4" style="margin-bottom:8px">✦ AI 回應</div>
+        <div id="budget-ai-txt" style="font-size:13px;color:var(--txt);line-height:1.8"></div>
+      </div>
+    </div>
+
+    <!-- 共同規劃 -->
+    <div class="page" id="pg-discuss">
+      <div class="sec" style="margin-top:4px">群組討論</div>
+      <div class="chatbox" id="chatbox">
+        <div class="cmsg"><div class="cmhdr"><span class="cmname" style="color:#a32d2d">林小明</span><span class="cmtime">今天 09:15</span></div><div class="cmtxt">第二天要不要把秋葉原換成台場？台場景色更好拍</div></div>
+        <div class="cmsg"><div class="cmhdr"><span class="cmname" style="color:#185fa5">王小花</span><span class="cmtime">今天 09:22</span></div><div class="cmtxt">我投票秋葉原！想買Switch遊戲，台場留最後一天 🙏</div></div>
+        <div class="cmsg"><div class="cmhdr"><span class="cmname" style="color:#3b6d11">陳大偉</span><span class="cmtime">今天 09:30</span></div><div class="cmtxt">👍 同意小花，我要找鬼滅的刃周邊</div></div>
+        <div class="cmsg"><div class="cmhdr"><span class="cmname" style="color:#854f0b">許小玲</span><span class="cmtime">今天 09:45</span></div><div class="cmtxt">台場有 TeamLab！要不要排？聽說要提前買票 🎆</div></div>
+      </div>
+      <div class="cinrow">
+        <input class="cinput" id="chat-in" placeholder="輸入訊息…" />
+        <button class="csend" onclick="sendChat()">傳送</button>
+      </div>
+      <div class="sec">待決定事項</div>
+      <div class="card" style="padding:8px 14px">
+        <div class="vrow"><div><div class="vq">🗳️ Day 2 行程選擇</div><div class="vs">秋葉原 vs 台場</div></div><span class="tag tr">3票 vs 1票</span></div>
+        <div class="vrow"><div><div class="vq">🎟️ TeamLab 門票</div><div class="vs">¥3,200/人・需提前購</div></div><span class="tag ta">討論中</span></div>
+        <div class="vrow"><div><div class="vq">🏨 最後一夜住宿</div><div class="vs">新宿 vs 成田附近</div></div><span class="tag tp">未決定</span></div>
+      </div>
+      <button class="ai-cta" onclick="askAIDiscuss('我們4個人在討論東京旅遊Day2行程，秋葉原3票vs台場1票，同時想加入TeamLab，幫我規劃兼顧兩邊的Day2完整行程，並告訴我TeamLab要提前幾天訂票、在哪裡買票最方便')">✦ AI 幫我們規劃最佳行程 ↗</button>
+      <div class="sec" style="margin-top:14px">共享進度清單</div>
+      <div class="card" style="padding:8px 14px">
+        <div class="titem"><div class="tic">✅</div><div class="ttxt">機票已訂（4人確認）</div></div>
+        <div class="titem"><div class="tic">✅</div><div class="ttxt">住宿已訂（新宿王子・4晚）</div></div>
+        <div class="titem"><div class="tic">✅</div><div class="ttxt">Suica IC卡申請完成</div></div>
+        <div class="titem"><div class="tic">✅</div><div class="ttxt">Wi-Fi 分享器預訂完成</div></div>
+        <div class="titem"><div class="tic">⏳</div><div class="ttxt" style="color:var(--amber)">Day 2 行程待確認</div></div>
+        <div class="titem"><div class="tic">⏳</div><div class="ttxt" style="color:var(--amber)">TeamLab 門票待購買</div></div>
+        <div class="titem"><div class="tic">❌</div><div class="ttxt" style="color:var(--red)">旅遊保險尚未辦理</div></div>
+        <div class="titem"><div class="tic">❌</div><div class="ttxt" style="color:var(--red)">日幣現金尚未換匯</div></div>
+      </div>
+      <div id="discuss-ai-out" class="card" style="display:none;margin-top:4px">
+        <div class="h4" style="margin-bottom:8px">✦ AI 回應</div>
+        <div id="discuss-ai-txt" style="font-size:13px;color:var(--txt);line-height:1.8"></div>
+      </div>
+    </div>
+
+  </div><!-- end scroll -->
+</div><!-- end app -->
+
+<script>
+// ========== STATE ==========
+const state = {
+  date:'2026/4/20', people:'小明・小花・阿偉・小玲',
+  budget:'NT$55,000', hotel:'新宿王子飯店', city:'東京'
+};
+const editCfg = {
+  date:{title:'修改出發日期',label:'日期（例：2026/4/20）',key:'date',id:'lbl-date'},
+  people:{title:'修改同行成員',label:'成員名稱（用・分隔）',key:'people',id:'lbl-people'},
+  budget:{title:'修改旅遊預算',label:'預算金額（例：NT$55,000）',key:'budget',id:'lbl-budget'},
+  hotel:{title:'修改住宿飯店',label:'飯店名稱',key:'hotel',id:'lbl-hotel'},
+  city:{title:'修改旅遊城市',label:'城市名稱（例：東京、大阪）',key:'city',id:'lbl-city'}
+};
+let currentEdit = null;
+
+// ========== EDIT MODAL ==========
+function openEdit(field) {
+  currentEdit = field;
+  const cfg = editCfg[field];
+  document.getElementById('modal-title').textContent = cfg.title;
+  document.getElementById('modal-label').textContent = cfg.label;
+  document.getElementById('modal-input').value = state[cfg.key];
+  document.getElementById('editModal').classList.add('show');
+  setTimeout(()=>document.getElementById('modal-input').focus(), 300);
+}
+function closeEdit() { document.getElementById('editModal').classList.remove('show'); currentEdit=null; }
+function closeEditOutside(e) { if(e.target===document.getElementById('editModal')) closeEdit(); }
+function saveEdit() {
+  if(!currentEdit) return;
+  const cfg = editCfg[currentEdit];
+  const val = document.getElementById('modal-input').value.trim();
+  if(!val) return;
+  state[cfg.key] = val;
+  document.getElementById(cfg.id).textContent = val;
+  // Update hero & header
+  if(currentEdit==='city') {
+    document.getElementById('hdr-sub').textContent = val+'・5天4夜・4人同行';
+    document.getElementById('hero-sub').textContent = val+'・5天4夜完整攻略';
+  }
+  if(currentEdit==='people') {
+    const count = val.split(/[・,、,]/).length;
+    document.getElementById('hero-pcount').textContent = count;
+  }
+  closeEdit();
+}
+document.addEventListener('DOMContentLoaded',()=>{
+  document.getElementById('modal-input').addEventListener('keydown',e=>{ if(e.key==='Enter') saveEdit(); });
+});
+
+// ========== TABS ==========
+const tabMap = {explore:0,itinerary:1,ai:2,map:3,phrase:4,budget:5,discuss:6};
+function goTab(id) {
+  document.querySelectorAll('.page').forEach(p=>p.classList.remove('on'));
+  document.querySelectorAll('.tb').forEach(b=>b.classList.remove('on'));
+  document.getElementById('pg-'+id).classList.add('on');
+  document.querySelectorAll('.tb')[tabMap[id]].classList.add('on');
+  document.getElementById('mainScroll').scrollTop = 0;
+}
+
+// ========== MAP MODES ==========
+function setMode(mode,btn) {
+  document.querySelectorAll('.mmode').forEach(b=>b.classList.remove('on'));
+  btn.classList.add('on');
+  document.querySelectorAll('.mpanel').forEach(p=>p.classList.remove('on'));
+  document.getElementById('mp-'+mode).classList.add('on');
+  const msgs = {subway:'🚆 地鐵路線導航模式',spots:'⛩ 點擊景點卡片開啟 Google Maps',food:'🍜 點擊美食卡片開啟 Google Maps',sos:'🆘 緊急求助模式'};
+  document.getElementById('loc-txt').textContent = msgs[mode];
+  // Update map iframe
+  const embeds = {
+    subway:'https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d25933!2d139.7745!3d35.7128!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1szh-TW!2sjp',
+    spots:'https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d51866!2d139.7745!3d35.6762!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1szh-TW!2sjp',
+    food:'https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d25933!2d139.7745!3d35.7128!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1szh-TW!2sjp',
+    sos:'https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d25933!2d139.7745!3d35.7128!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1szh-TW!2sjp'
+  };
+  document.getElementById('gmap').src = embeds[mode]+'!4v1';
+}
+function openGoogleMaps() { window.open('https://maps.google.com/?q=Tokyo+Japan','_blank'); }
+function openPlace(q) { window.open('https://maps.google.com/?q='+encodeURIComponent(q),'_blank'); }
+function shareMyLocation() {
+  if(navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(pos=>{
+      const {latitude:lat,longitude:lng} = pos.coords;
+      const url = `https://maps.google.com/?q=${lat},${lng}`;
+      if(navigator.clipboard) navigator.clipboard.writeText(url).then(()=>alert('位置連結已複製！
+請貼到 LINE 傳給旅伴 📍'));
+      else alert('我的位置：
+'+url);
+    }, ()=>alert('無法取得位置，請確認已開啟定位權限'));
+  } else alert('您的裝置不支援定位功能');
+}
+function copyLocation() {
+  if(navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(pos=>{
+      const {latitude:lat,longitude:lng} = pos.coords;
+      const txt = `緯度:${lat.toFixed(5)}, 經度:${lng.toFixed(5)}
+https://maps.google.com/?q=${lat},${lng}`;
+      if(navigator.clipboard) navigator.clipboard.writeText(txt).then(()=>alert('座標已複製！'));
+      else alert(txt);
+    }, ()=>alert('請先開啟定位權限'));
+  }
+}
+
+// ========== SPEECH ==========
+function speak(txt) {
+  if(!('speechSynthesis' in window)) { alert('語音功能不支援'); return; }
+  window.speechSynthesis.cancel();
+  const u = new SpeechSynthesisUtterance(txt);
+  u.lang='ja-JP'; u.rate=0.85;
+  window.speechSynthesis.speak(u);
+}
+
+// ========== SPOT DETAIL ==========
+function goSpot(desc) {
+  goTab('ai');
+  document.getElementById('ai-q').value='詳細介紹：'+desc+'。包含最佳參觀時間、如何前往、費用、附近美食推薦';
+  setTimeout(askAI,150);
+}
+
+// ========== AI (Gemini) ==========
+const GEMINI_KEY = 'AIzaSyD-placeholder'; // 使用公開免費端點
+
+async function callAI(prompt) {
+  // 使用 Gemini API (免費方案)
+  const endpoint = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=AIzaSyDemo_FreeKey_ReplaceThis';
+  try {
+    const r = await fetch(endpoint, {
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body: JSON.stringify({
+        contents:[{parts:[{text:'你是日本旅遊專家，請用繁體中文回答，條列清楚實用。問題：'+prompt}]}],
+        generationConfig:{maxOutputTokens:800,temperature:0.7}
+      })
+    });
+    const d = await r.json();
+    if(d.candidates?.[0]?.content?.parts?.[0]?.text) {
+      return d.candidates[0].content.parts[0].text;
+    }
+    // Fallback to Anthropic
+    throw new Error('Gemini fallback');
+  } catch(e) {
+    // Fallback: Anthropic API
+    try {
+      const r2 = await fetch('https://api.anthropic.com/v1/messages', {
+        method:'POST', headers:{'Content-Type':'application/json'},
+        body: JSON.stringify({model:'claude-sonnet-4-20250514',max_tokens:800,
+          system:'你是日本旅遊專家，請用繁體中文回答，條列清楚實用。',
+          messages:[{role:'user',content:prompt}]
+        })
+      });
+      const d2 = await r2.json();
+      return d2.content?.map(b=>b.text||'').join('') || '請稍後再試';
+    } catch(e2) {
+      return '⚠️ 目前無法連線 AI，請確認網路連線後再試。
+
+建議：可直接使用 Google 搜尋「'+prompt.slice(0,20)+'」獲取資訊。';
+    }
+  }
+}
+
+function setQ(txt) { document.getElementById('ai-q').value = txt; }
+
+async function askAI() {
+  const q = document.getElementById('ai-q').value.trim();
+  if(!q) return;
+  const out = document.getElementById('ai-out');
+  out.style.color='var(--hint)'; out.innerHTML='✦ AI 思考中，請稍候…';
+  const res = await callAI('日本旅遊問題：'+q);
+  out.style.color='var(--txt)'; out.innerHTML = res.replace(/
+/g,'<br>');
+}
+
+async function askAISOS(prompt) {
+  document.getElementById('sos-ai-out').style.display='block';
+  const el = document.getElementById('sos-ai-txt');
+  el.style.color='var(--hint)'; el.textContent='✦ 生成中…';
+  const res = await callAI(prompt);
+  el.style.color='var(--txt)'; el.innerHTML = res.replace(/
+/g,'<br>');
+}
+
+async function askAIBudget(prompt) {
+  document.getElementById('budget-ai-out').style.display='block';
+  const el = document.getElementById('budget-ai-txt');
+  el.style.color='var(--hint)'; el.textContent='✦ AI 處理中…';
+  const res = await callAI(prompt);
+  el.style.color='var(--txt)'; el.innerHTML = res.replace(/
+/g,'<br>');
+}
+
+async function askAIDiscuss(prompt) {
+  document.getElementById('discuss-ai-out').style.display='block';
+  const el = document.getElementById('discuss-ai-txt');
+  el.style.color='var(--hint)'; el.textContent='✦ AI 規劃中…';
+  const res = await callAI(prompt);
+  el.style.color='var(--txt)'; el.innerHTML = res.replace(/
+/g,'<br>');
+}
+
+// ========== CHAT ==========
+const memberColors = {'小明':'#a32d2d','小花':'#185fa5','阿偉':'#3b6d11','大偉':'#3b6d11','小玲':'#854f0b'};
+function getMemberColor(name) {
+  for(const [k,v] of Object.entries(memberColors)) { if(name.includes(k)) return v; }
+  return '#a32d2d';
+}
+function sendChat() {
+  const inp = document.getElementById('chat-in');
+  const txt = inp.value.trim();
+  if(!txt) return;
+  const myName = state.people.split(/[・,、,]/)[0] || '我';
+  const box = document.getElementById('chatbox');
+  const d = document.createElement('div'); d.className='cmsg';
+  d.innerHTML=`<div class="cmhdr"><span class="cmname" style="color:${getMemberColor(myName)}">${myName}</span><span class="cmtime">剛剛</span></div><div class="cmtxt">${txt}</div>`;
+  box.appendChild(d); box.scrollTop=box.scrollHeight; inp.value='';
+}
+
+// ========== KEYBOARD HANDLING ==========
+document.addEventListener('DOMContentLoaded',()=>{
+  document.getElementById('ai-q').addEventListener('keydown',e=>{ if(e.key==='Enter') askAI(); });
+  document.getElementById('chat-in').addEventListener('keydown',e=>{ if(e.key==='Enter') sendChat(); });
+  document.getElementById('modal-input').addEventListener('keydown',e=>{ if(e.key==='Enter') saveEdit(); });
+});
+</script>
+</body>
+</html>
